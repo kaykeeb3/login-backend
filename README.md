@@ -9,7 +9,7 @@ Antes de começar, certifique-se de ter o Docker e o Docker Compose instalados e
 1.  **Clone o Repositório:**
 
     ```bash
-    git clone https://github.com/seu-usuario/login.git
+    git clone https://github.com/Kayke-Ti/login-backend.git
 
     cd login-backend
 
