@@ -20,7 +20,7 @@ Antes de começar, certifique-se de ter o Docker e o Docker Compose instalados e
 
     ```bash
       DATABASE_URL=postgresql://user:password@localhost:5432/login_db
-    JWT_SECRET=sua_chave_secreta_para_jwt
+      JWT_SECRET=sua_chave_secreta_para_jwt
 
     ```
 
