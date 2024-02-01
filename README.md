@@ -27,7 +27,7 @@ Antes de começar, certifique-se de ter o Docker e o Docker Compose instalados e
 3.  **Inicie o Docker Compose:**
 
     ```bash
-      docker-compose up -d**
+      docker-compose up -d
     ```
 
 4.  **Instale as Dependências e Execute as Migrações:**
