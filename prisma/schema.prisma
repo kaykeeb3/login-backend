@@ -1,0 +1,19 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Modelo para usuários
+model User {
+  id        Int      @id @default(autoincrement()) @map("_id") // Define um campo de ID autoincrementável
+  username  String   @unique // O nome de usuário deve ser único
+  password  String // O campo para armazenar a senha (lembre-se de considerar o hash da senha)
+  createdAt DateTime @default(now()) // Adiciona um campo para registrar a data de criação
+}

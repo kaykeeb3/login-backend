@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  login-postgres:
+    image: postgres:latest
+    container_name: login-postgres
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: login_db
+    ports:
+      - "5432:5432"
+    restart: always
