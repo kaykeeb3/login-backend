@@ -1,75 +1,77 @@
 # Login - Backend
 
-Este é o backend do projeto de uma tela de login, uma aplicação de exemplo para gerenciar autenticação de usuários. Este projeto é construído com Node.js, Express.js, Jest, Prisma, PostgreSQL e utiliza JWT para autenticação.
+This is the backend of a login screen project, an example application for managing user authentication. The project is built with **Node.js**, **Express.js**, **Jest**, **Prisma**, **PostgreSQL**, and uses **JWT** for authentication.
 
-## Como Iniciar
+## Getting Started
 
-Antes de começar, certifique-se de ter o Docker e o Docker Compose instalados em seu sistema.
+Before starting, make sure you have **Docker** and **Docker Compose** installed on your system.
 
-1.  **Clone o Repositório:**
+### 1. Clone the Repository
 
-    ```bash
-    git clone https://github.com/Kayke-Ti/login-backend.git
+```bash
+git clone https://github.com/kaykeeb3/login-backend.git
+cd login-backend
+npm install
+```
 
-    cd login-backend
+### 2. Create a `.env` File
 
-    npm install
-    ```
+Create a `.env` file at the root of the project with the following environment variables:
 
-2.  **Crie um arquivo .env: Crie um arquivo .env na raiz do projeto com as seguintes variáveis de ambiente:**
+```bash
+DATABASE_URL=postgresql://user:password@localhost:5432/login_db
+JWT_SECRET=
+```
 
-    ```bash
-      DATABASE_URL=postgresql://user:password@localhost:5432/login_db
-      JWT_SECRET=sua_chave_secreta_para_jwt
+### 3. Start Docker Compose
 
-    ```
+```bash
+docker-compose up -d
+```
 
-3.  **Inicie o Docker Compose:**
+### 4. Install Dependencies and Run Migrations
 
-    ```bash
-      docker-compose up -d
-    ```
+```bash
+npm install
+npx prisma migrate dev
+```
 
-4.  **Instale as Dependências e Execute as Migrações:**
+### 5. Start the Server
 
-    ```bash
-      npm install
-      npx prisma migrate dev
-    ```
+```bash
+npm start
+```
 
-5.  **Inicie o Servidor:**
+## Folder & File Structure
 
-    ```bash
-    npm start
-    ```
+The project follows the structure below:
 
-6.  **Padrão de PASTAS & ARQUIVOS:**
-    ```
-    |-- src
-    | |-- controllers
-    | | |-- authController.js
-    | | |-- userController.js
-    | |-- middlewares
-    | | |-- authenticationMiddleware.js
-    | |-- routes
-    | | |-- authRoutes.js
-    | | |-- userRoutes.js
-    | |-- services
-    | | |-- authService.js
-    | | |-- userService.js
-    | |-- utils
-    | | |-- jwtUtils.js
-    | |-- app.js
-    | |-- db.js
-    |-- .env
-    |-- .gitignore
-    |-- package.json
-    |-- prisma
-    | |-- schema.prisma
-    |-- tests
-    | |-- authService.test.js
-    | |-- authController.test.js
-    | |-- userController.test.js
-    |-- docker-compose.yml
-    |-- README.md
-    ```
+```
+|-- src
+|   |-- controllers
+|   |   |-- authController.js
+|   |   |-- userController.js
+|   |-- middlewares
+|   |   |-- authenticationMiddleware.js
+|   |-- routes
+|   |   |-- authRoutes.js
+|   |   |-- userRoutes.js
+|   |-- services
+|   |   |-- authService.js
+|   |   |-- userService.js
+|   |-- utils
+|   |   |-- jwtUtils.js
+|   |-- app.js
+|   |-- db.js
+|-- .env
+|-- .gitignore
+|-- package.json
+|-- prisma
+|   |-- schema.prisma
+|-- tests
+|   |-- authService.test.js
+|   |-- authController.test.js
+|   |-- userController.test.js
+|-- docker-compose.yml
+|-- README.md
+```
